@@ -6,10 +6,10 @@ function scryfallFindCard(robot) {
 
     Scry.Cards.byName(cardName, true)
         .then(function(result) {
-            if(result.image_uri) {
-                robot.send(result.image_uri);
+            if(result.scryfall_uri) {
+                robot.send(result.scryfall_uri);
             } else {
-                handleError(robot, 'scryfall returned card object, but no card image');
+                handleError(robot, 'scryfall returned card object, but no card uri');
             }
         }).catch(function (error) {
             handleError(robot, error);
@@ -17,7 +17,7 @@ function scryfallFindCard(robot) {
 }
 
 function handleError(robot, error) {
-    console.error('Error retrieving card from scryfall, falling back to gatherer', error);
+    console.error('Error retrieving card from scryfall, falling back to gatherer: ', error);
     gatherer(robot);
 }
 
