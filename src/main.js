@@ -12,7 +12,7 @@
 //   HerrPfister
 
 var clash = require('./commands/clash'),
-    findCard = require('./commands/find'),
+    // findCard = require('./commands/find'),
     queryCards = require('./commands/query'),
     randomCard = require('./commands/random'),
     scry = require('./commands/scry'),
@@ -21,8 +21,8 @@ var clash = require('./commands/clash'),
 module.exports = function (robot) {
     robot.respond(/mtg\s+clash\s+(.*)/i, clash);
     robot.respond(/mtg\s+query\s+(.*)/i, queryCards);
-    robot.respond(/mtg\s+find\s+(.*)/i, findCard);
+    // robot.respond(/mtg\s+find\s+(.*)/i, findCard);
     robot.respond(/mtg\s+term\s+(.*)/i, term);
     robot.respond(/mtg\s+random/i, randomCard);
-    // robot.hear(/[[(.*)]]/i, scry);
+    robot.hear(/[[(.*)]]/i, scry);
 };
