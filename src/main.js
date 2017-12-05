@@ -15,7 +15,7 @@ var clash = require('./commands/clash'),
     findCard = require('./commands/find'),
     queryCards = require('./commands/query'),
     randomCard = require('./commands/random'),
-    scry = require('./commands/scryfall_find'),
+    // scry = require('./commands/scryfall_find'),
     term = require('./commands/term');
 
 module.exports = function (robot) {
@@ -24,5 +24,5 @@ module.exports = function (robot) {
     robot.respond(/mtg\s+find\s+(.*)/i, findCard);
     robot.respond(/mtg\s+term\s+(.*)/i, term);
     robot.respond(/mtg\s+random/i, randomCard);
-    robot.hear(/[[(.*)]]/i, scry);
+    // robot.hear(/[[(.*)]]/i, scry);
 };
