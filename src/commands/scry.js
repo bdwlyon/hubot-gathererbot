@@ -8,9 +8,6 @@ function scryfallFindCard(robot) {
         .then(function(result) {
             if(result.image_uris.normal) {
                 robot.send(result.image_uris.normal);
-                if(result.scryfall_uri) {
-                    robot.send(result.scryfall_uri);
-                }
             } else {
                 handleError(robot, 'returned card object, but no image uri');
             }
