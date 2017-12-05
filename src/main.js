@@ -24,5 +24,5 @@ module.exports = function (robot) {
     robot.respond(/mtg\s+find\s+(.*)/i, findCard);
     robot.respond(/mtg\s+term\s+(.*)/i, term);
     robot.respond(/mtg\s+random/i, randomCard);
-    // robot.hear(/[[(.*)]]/i, scry);
+    robot.hear(/[[(.*)]]/i, scry);
 };
