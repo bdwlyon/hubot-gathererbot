@@ -9,7 +9,7 @@ function scryfallFindCard(robot) {
             if(result.image_uris.normal) {
                 robot.send(result.image_uris.normal);
             } else {
-                handleError(robot, 'scryfall returned card object, but no card uri');
+                handleError(robot, 'scryfall returned card object, but no image uri');
             }
         }).catch(function (error) {
             handleError(robot, error);
@@ -17,7 +17,7 @@ function scryfallFindCard(robot) {
 }
 
 function handleError(robot, error) {
-    console.error('Falling back to Gatherer after receiving an error from Scryfall: ', error.details);
+    console.error('Falling back to Gatherer after receiving an error from Scryfall: ', error.body);
     gatherer(robot);
 }
 
