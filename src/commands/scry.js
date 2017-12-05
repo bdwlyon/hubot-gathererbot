@@ -1,10 +1,10 @@
-var scry = require('scryfall-sdk');
+var Scry = require('scryfall-sdk');
 var gatherer = require('./find');
 
 function scryfallFindCard(robot) {
     var cardName = robot.match[1].trim().toLowerCase();
 
-    scry.Cards.byName(cardName, true)
+    Scry.Cards.byName(cardName, true)
         .then(function(result) {
             if(result.image_uri) {
                 robot.send(result.image_uri);
@@ -13,7 +13,7 @@ function scryfallFindCard(robot) {
             }
         }).catch(function (error) {
             handleError(robot, error);
-    })
+    });
 }
 
 function handleError(robot, error) {
