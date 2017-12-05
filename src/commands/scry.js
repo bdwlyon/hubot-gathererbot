@@ -1,5 +1,5 @@
 var scry = require('scryfall-sdk');
-var gatherer = require('find');
+var gatherer = require('./find');
 
 function scryfallFindCard(robot) {
     var cardName = robot.match[1].trim().toLowerCase();
